@@ -5,8 +5,13 @@ const bodyparser = require('body-parser');
 
 router.use(bodyparser.json());
 
+<<<<<<< HEAD
 router.post('/', (req,res)=>{
 
+=======
+// SIP Calculation
+router.post('/', (req,res)=>{ 
+>>>>>>> 7e65c4cbb452fd0f37e84ab4b4e148220937f381
     var months = req.body.period*12;
     var rate = req.body.rate/12;
     var monInvest = req.body.monInvest;
