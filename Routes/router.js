@@ -8,10 +8,10 @@ const cors = require('cors');
 router.use(cors());
 router.use(bodyparser.json());
 
-router.post('/', (req,res)=>{
-   
-    var months = req.body.months;
-    var rate = req.body.rate;
+// SIP Calculation
+router.post('/', (req,res)=>{ 
+    var months = req.body.period*12;
+    var rate = req.body.rate/12;
     var monInvest = req.body.monInvest;
     var sum = 0;
     var Return = 0;
