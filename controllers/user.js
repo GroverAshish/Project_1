@@ -4,6 +4,7 @@ module.exports.sip_ctr = function(req,res){
     var rate = req.body.rate;
     var monInvest = req.body.monInvest;
 
+    // Validation
     if(!isNaN(period) && !isNaN(rate) && !isNaN(monInvest))
     {
         if(period > 0 && rate > 0 && monInvest > 0)

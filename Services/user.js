@@ -1,6 +1,5 @@
 var ctr = require("../controllers/user");
 
-// Validation 
 module.exports.sip = function(req,res){
     if(ctr.sip_ctr(req,res)){
         var months = req.body.period*12;
