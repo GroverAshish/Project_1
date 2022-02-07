@@ -6,7 +6,7 @@ app.use(bodyparser.json());
 
 const port = 3000;
 
-app.use('/api', require('./Routes/router'));
+app.use('/api', require('./Routes/route'));
 
 app.listen(port, (err,res)=>{
     if(err)console.log('Error '+ err);
