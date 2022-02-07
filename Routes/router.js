@@ -3,13 +3,10 @@ const router = express.Router();
 const path = require('path');
 const bodyparser = require('body-parser');
 
-const cors = require('cors');
-
-router.use(cors());
 router.use(bodyparser.json());
 
 router.post('/', (req,res)=>{
-   
+
     var months = req.body.period*12;
     var rate = req.body.rate/12;
     var monInvest = req.body.monInvest;
