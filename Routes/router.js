@@ -5,8 +5,6 @@ const bodyparser = require('body-parser');
 
 router.use(bodyparser.json());
 
-router.post('/', (req,res)=>{
-
 // SIP Calculation
 router.post('/', (req,res)=>{ 
 
