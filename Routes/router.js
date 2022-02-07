@@ -3,9 +3,6 @@ const router = express.Router();
 const path = require('path');
 const bodyparser = require('body-parser');
 
-const cors = require('cors');
-
-router.use(cors());
 router.use(bodyparser.json());
 
 // SIP Calculation
