@@ -18,6 +18,8 @@ async function sip_ctr(data) {
       graph.push(obj);
     
   }
+  data.return = Return;
+  delete(data.monInvest);
 
   let Result = {
     Data: data,
