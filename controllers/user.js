@@ -15,7 +15,7 @@ function sip(req,res){
         res.status(400).send('Invalid Inputs');
     }
     else
-    res.status(200).json(service.sip_ctr(data));
+    res.status(200).send(service.sip_ctr(data));
 
 }
 
