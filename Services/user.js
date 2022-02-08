@@ -11,12 +11,12 @@ async function sip_ctr(data) {
     sum = monInvest * Math.pow(1 + rate / 100, i);
     Return += sum;
       let obj = {
-        year: i,
+        month: i,
         return: Return
     }
 
       graph.push(obj);
-    }
+    
   }
 
   let Result = {
