@@ -1,20 +1,23 @@
-module.exports.sip_ctr = function(req,res){
+const service = require('../Services/user');
 
-    var period = req.body.period;
-    var rate = req.body.rate;
-    var monInvest = req.body.monInvest;
-
-    // Validation
-    if(!isNaN(period) && !isNaN(rate) && !isNaN(monInvest))
+// Validation
+function sip(req,res){
+     let data = req.body;
+     
+    //  Check If all inputs are numerical or not
+    if(isNaN(data.period) || isNaN(data.rate) || isNaN(data.monInvest))
     {
-        if(period > 0 && rate > 0 && monInvest > 0)
-        {
-            return true;
-        }
-        return false;
-    } 
-    
-    
-    return false;
-        
+        res.status(400).send('Invalid Inputs');
+    }   
+    else if(data.period<=0 || data.rate<=0 || data.monInvest<=0)
+    {
+        res.status(400).send('Invalid Inputs');
+    }
+    else
+    res.status(200).json(service.sip_ctr(data));
+
+}
+
+module.exports = {
+    sip
 }

@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const srv = require('../Services/user');
+const srv = require('../controllers/user');
 
 // SIP Calculation
-router.post('/', srv.sip);
+router.post('/SIP', srv.sip);
 
 module.exports = router;
