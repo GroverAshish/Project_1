@@ -1,22 +1,29 @@
-function sip_ctr(data){
+async function sip_ctr(data){
     
     // Calculation of Total Return
     let months = data.period*12;
     let rate = data.rate/12;
     let monInvest = data.monInvest;
     var sum = 0;
+    var y = 0;
     var Return = 0;
     let graph = [];
+    
 
     for(var i = 1; i<=months; i++)
     {
         sum = monInvest*(Math.pow((1 + rate/100),i)); 
         Return += sum; 
-        let obj = {
-            "year": i,
-            "return": Return
-        };
-        graph.push(obj);
+        if(i%12 == 0)
+        {
+            y++;
+            let obj = {
+                "year": y,
+                "return": Return
+            };
+            graph.push(obj);
+        }
+       
     }
 
     

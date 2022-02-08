@@ -1,7 +1,7 @@
 const service = require('../Services/user');
 
 // Validation
-function sip(req,res){
+async function sip(req,res){
      let data = req.body;
      
     //  Check If all inputs are numerical or not
@@ -15,7 +15,7 @@ function sip(req,res){
         res.status(400).send('Invalid Inputs');
     }
     else
-    res.status(200).send(service.sip_ctr(data));
+    res.status(200).send(await service.sip_ctr(data));
 
 }
 
