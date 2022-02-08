@@ -5,7 +5,6 @@ async function sip_ctr(data){
     let rate = data.rate/12;
     let monInvest = data.monInvest;
     var sum = 0;
-    var y = 0;
     var Return = 0;
     let graph = [];
     
@@ -16,16 +15,14 @@ async function sip_ctr(data){
         Return += sum; 
         if(i%12 == 0)
         {
-            y++;
             let obj = {
-                "year": y,
+                "year": i/12,
                 "return": Return
             };
             graph.push(obj);
         }
        
     }
-
     
     let Result = {
         "Data": data,

@@ -1,7 +1,7 @@
 const service = require('../Services/user');
 
 // Validation
-async function sip(req,res){
+const sip = async(req,res)=>{
      let data = req.body;
      
     //  Check If all inputs are numerical or not
