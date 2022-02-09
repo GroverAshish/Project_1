@@ -23,8 +23,6 @@ async function sip_ctr(data) {
   data.Graph = graph
   return data
 
-  
-
 }
 module.exports = {
   sip_ctr,
