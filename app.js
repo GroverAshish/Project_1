@@ -1,14 +1,12 @@
 const express = require("express")
-const app = express()
+const server = express()
 const bodyparser = require("body-parser")
 
-app.use(bodyparser.json())
+server.use(bodyparser.json())
 
-const port = 3000
+server.use("/", require("./Routes/index"))
 
-app.use("/api", require("./Routes/index"))
-
-app.listen(port, (err, res) => {
+server.listen(3000, (err, res) => {
   if (err) console.log("Error " + err)
   else console.log("App is listening at port 3000")
 })

@@ -18,5 +18,5 @@ const sip = async (req, res) => {
 }
 
 module.exports = {
-  sip,
+  sip
 }
