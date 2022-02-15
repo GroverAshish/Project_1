@@ -1,26 +1,30 @@
-async function sip_ctr(data) {
+const sip_ctr = async (data) => {
   // Calculation of Total Return
   let months = data.period * 12
-  let rate = data.rate / 12
+  let rate = (data.rate - data.inflationRate)/12
   let monInvest = data.monInvest
-  let Return = 0
-  let sum = 0
+  let returnSip = 0
+  let result = {}
   const graph = []
 
   for (let i = 1; i <= months; i++) {
-    sum = monInvest * Math.pow(1 + rate / 100, i)
-    Return += sum
-      let obj = {
+    returnSip += monInvest * Math.pow(1 + rate / 100, i)
+    let obj = {
         month: i,
-        return: Return
+        return: returnSip
     }
-    graph.push(obj)
-
+      graph.push(obj)
   }
-  data.return = Return
-  delete(data.monInvest)
-  data.Graph = graph
-  return data
+
+  result.period = data.period
+  result.rate = data.rate
+  result.inflationRate = data.inflationRate
+  result.moneyInvested = months*monInvest
+  result.return = returnSip
+  result.graph = graph
+  
+
+  return result  
 
 }
 module.exports = {
